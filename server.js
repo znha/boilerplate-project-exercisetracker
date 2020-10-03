@@ -5,9 +5,8 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 
 const mongoose = require('mongoose')
-//process.env.MLAB_URI || 
 
-mongoose.connect("mongodb+srv://znha:0plMhOslt7rgvPUM@cluster0.gw1av.mongodb.net/exerciseTracers?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MLAB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connection.on('error', err => {
   console.log(err);
 });
